@@ -4,7 +4,7 @@ from PostMachine import PostMachine_class
 
 class inter(customtkinter.CTk, PostMachine_class):
     """
-    class inter(customtkinter.CTk, PostMachine_class),
+    class App(customtkinter.CTk, PostMachine_class),
     наследует от customtkinter.CTk, PostMachine_class.
 
     Назначение - класс интерпретации, для работы
@@ -171,7 +171,7 @@ class inter(customtkinter.CTk, PostMachine_class):
 
 
 
-    def _corect_step(self, step1):
+    def _correct_step(self, step1):
         """
         Метод проверяющий корректность номера выполняемой команды. В программе не может быть
         номеров с отрицательным значением или номеров больших,
@@ -189,7 +189,7 @@ class inter(customtkinter.CTk, PostMachine_class):
         else:
             return True
 
-    def _corect_input_ribbon(self, ribbon):
+    def _correct_input_ribbon(self, ribbon):
         """
         Метод проверяющий корректность начального состояния ленты машины, введенного
         пользователем. (В ленте не может быть что-то кроме 0 и 1 или пустоты)
@@ -249,11 +249,11 @@ class inter(customtkinter.CTk, PostMachine_class):
         current_ribbon = []  # текущее состояние ленты
 
         # В первую очередь проверяем корректность ленты
-        if self._corect_input_ribbon(self.first_ribbon_list):
+        if self._correct_input_ribbon(self.first_ribbon_list):
             # пока состоянием машины True и программа не превысила максимальное количество шагов
             while work and iter <= maxIter:
                 # проверяем корректность номера шага
-                if self._corect_step(step):
+                if self._correct_step(step):
 
                     current_command = self.command_list[step - 1][0]  # текущая команда
 
