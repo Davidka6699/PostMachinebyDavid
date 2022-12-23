@@ -47,13 +47,6 @@ class inter(customtkinter.CTk, PostMachine_class):
                                                  compound="top", anchor="center")
         self.label_logo.grid(column=0, row=0, padx=20, pady=(20, 50), sticky="ew")
 
-        # Кнопка очистки окон
-
-        self.btn_reset_command = customtkinter.CTkButton(self.frame_menu, text="ОЧИСТИТЬ ОКНА", width=200, height=32,
-                                                         font=("Segoe UI", 16), fg_color="#353535",
-                                                         text_color="#888888", command=self._reset)
-        self.btn_reset_command.grid(column=0, row=6, padx=20, pady=(0, 10), sticky="s")
-
         #############################################
         # фрейм два(реализованы виджеты ввода)
         #############################################
@@ -208,47 +201,6 @@ class inter(customtkinter.CTk, PostMachine_class):
             if i not in '01':
                 return False
         return True
-
-    def _reset(self):
-        """
-        Метод сбрасывающий весь контент виджетов, при нажатии на кнопку
-        Нужен для подчистки памяти
-        """
-        self.output.configure(state="normal")
-        self.output.delete('0.0', 'end')
-        self.output.edit_reset()
-        self.output.configure(state="disabled")
-
-        self.step_out.configure(state="normal")
-        self.step_out.delete('0.0', 'end')
-        self.step_out.edit_reset()
-        self.step_out.configure(state="disabled")
-
-        self.rezult.configure(state="normal")
-        self.rezult.delete('0.0', 'end')
-        self.rezult.edit_reset()
-        self.rezult.configure(state="disabled")
-
-        self.command_input_field.configure(state="normal")
-        self.command_input_field.configure()
-        self.command_input_field.delete('0.0', "end")
-        self.command_input_field.edit_reset()
-        self.command_input_field.configure(state="disabled")
-
-        self.first_ribbon_input_field.configure(state="normal")
-        self.first_ribbon_input_field.delete('0.0', 'end')
-        self.first_ribbon_input_field.edit_reset()
-        self.first_ribbon_input_field.configure(state="disabled")
-
-        if self.check_command_input_field.get() == 1:
-            self.check_command_input_field.toggle()
-        if self.check_first_ribbon_input_field.get() == 1:
-            self.check_first_ribbon_input_field.toggle()
-
-        self.output.configure(state="normal")
-        self.output.insert("0.0",
-                           '0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0')
-        self.output.configure(state="disabled")
 
     def _start(self):
         """
