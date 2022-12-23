@@ -38,7 +38,7 @@ class PostMachine_class():
 
     def get_carriage(self):
         """
-        Функция возвращающая индекс пишущей головки машины
+        Функция возвращающая индекс каретки
         """
 
         return self.carriage
@@ -54,7 +54,7 @@ class PostMachine_class():
 
         # проверяем возможность выполнения команды согласно правилам работы машины
         # (невозможно поставить метку в непустое поле, как и убрать метку из пустого)
-        # проверяемрй командой не может быть символ кроме v и -
+        # проверяемрй командой не может быть символ кроме V и X
         if self.ribbon_list[self.carriage] == '1' and current_command == 'V':
             return False
         elif self.ribbon_list[self.carriage] == '0' and current_command == 'X':
@@ -136,7 +136,7 @@ class PostMachine_class():
                 return 22
             if self.ribbon_list[self.carriage] == '0':
                 return 11
-        #в случае ошибки, возвращаем не новую ленту и индекс головки, а ошибку
+        #в случае ошибки, возвращаем не новую ленту и индекс каретки, а ошибку
         elif not self._can_do_command(current_command):
 
             return "Программа не может окончить свое выполнение в связи с ошибкой"
