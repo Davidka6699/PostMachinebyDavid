@@ -4,7 +4,7 @@ from PostMachine import PostMachine_class
 
 class inter(customtkinter.CTk, PostMachine_class):
     """
-    class App(customtkinter.CTk, PostMachine_class),
+    class inter(customtkinter.CTk, PostMachine_class),
     наследует от customtkinter.CTk, PostMachine_class.
 
     Назначение - класс интерпретации, для работы
